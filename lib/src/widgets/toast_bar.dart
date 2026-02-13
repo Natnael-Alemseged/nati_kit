@@ -1,4 +1,4 @@
-import '../utils/haptic_service.dart'';
+import '../utils/haptic_service.dart';
 import 'package:delightful_toast/delight_toast.dart';
 import 'package:delightful_toast/toast/components/toast_card.dart';
 import 'package:delightful_toast/toast/utils/enums.dart';

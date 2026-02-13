@@ -1,7 +1,6 @@
 /// Nati Kit - A robust Flutter UI toolkit by Natnael
 ///
 /// This package provides production-ready, reusable components for Flutter apps.
-library nati_kit;
 
 // Widgets
 export 'src/widgets/nati_app_bar.dart';
