@@ -1,0 +1,19 @@
+name: nati_kit
+description: A robust Flutter UI toolkit with production-ready components, theming, and utilities. Built by Natnael for rapid app development.
+version: 1.0.0
+homepage: https://github.com/Natnael-Alemseged/nati_kit
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_vibrate: ^1.3.0
+  delightful_toast: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
