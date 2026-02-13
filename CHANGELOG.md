@@ -2,6 +2,13 @@
 
 All notable changes to the Nati Kit package will be documented in this file.
 
+## [1.0.1] - 2026-02-13
+
+### Fixed
+
+- Improved package metadata with repository links.
+- Removed unused/broken boilerplate test file.
+
 ## [1.0.0] - 2026-02-13
 
 ### Added
