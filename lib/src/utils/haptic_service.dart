@@ -1,5 +1,4 @@
 import 'package:flutter/services.dart';
-import 'package:flutter_vibrate/flutter_vibrate.dart';
 
 /// A robust, reusable service for handling haptic feedback across the app.
 /// This ensures consistent feel and allows for easy updates or disabling globally.
@@ -8,10 +7,7 @@ class HapticService {
   HapticService._();
 
   /// Initialize haptics (check capabilities)
-  static Future<void> init() async {
-    // Optional: Check if device supports custom vibrations
-    // bool canVibrate = await Vibrate.canVibrate;
-  }
+  static Future<void> init() async {}
 
   /// Light impact (e.g., key press, small selection)
   static Future<void> light() async {
@@ -30,34 +26,20 @@ class HapticService {
 
   /// Success feedback (e.g., successful transaction, task complete)
   static Future<void> success() async {
-    // Uses the platform's specific "success" pattern
-    // If not available, falls back to medium impact
-    try {
-      Vibrate.feedback(FeedbackType.success);
-    } catch (_) {
-      await medium();
-    }
+    await medium();
   }
 
   /// Warning feedback (e.g., form validation error)
   static Future<void> warning() async {
-    try {
-      Vibrate.feedback(FeedbackType.warning);
-    } catch (_) {
-      await heavy();
-    }
+    await heavy();
   }
 
   /// Error feedback (e.g., API failure, critical error)
   static Future<void> error() async {
-    try {
-      Vibrate.feedback(FeedbackType.error);
-    } catch (_) {
-      // Fallback: Double heavy impact
-      await HapticFeedback.heavyImpact();
-      await Future.delayed(const Duration(milliseconds: 100));
-      await HapticFeedback.heavyImpact();
-    }
+    // Double heavy impact to signal a distinct error pattern
+    await HapticFeedback.heavyImpact();
+    await Future.delayed(const Duration(milliseconds: 100));
+    await HapticFeedback.heavyImpact();
   }
 
   /// Selection feedback (e.g., picker scroll, slider move)
